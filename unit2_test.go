@@ -17,14 +17,13 @@ func TestValidateMinLength(t *testing.T){
 			{"min=0",reflect.ValueOf(""), "Name", false},
 		}
 		for _, tt := range tests {
-			err := ValidateMinLength(
+			err := validateMinLength(
 				tt.rule, 
 				tt.field, 
 				tt.fieldName, 
 			)
 			if (err !=nil ) != tt.wantErr {
-				 t.Errorf( "validateMinLength() error = %v,
-				 wantErr = %v",
+				 t.Errorf( "validateMinLength() error = %v,wantErr = %v",
 				err,
 			tt.wantErr)
 			}
